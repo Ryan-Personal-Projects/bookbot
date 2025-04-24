@@ -1,3 +1,5 @@
+from stats import word_counter, char_counter
+
 def get_book_text(file_path):
     """
     Reads the content of a book file and returns it as a string.
@@ -13,6 +15,10 @@ def get_book_text(file_path):
 
 def main():
     frankenstein_file_path = "./books/frankenstein.txt"
-    print(get_book_text(frankenstein_file_path))
+    frankenstein_text = get_book_text(frankenstein_file_path)
+    word_count = word_counter(frankenstein_text)
+    char_count = char_counter(frankenstein_text)
+    print(f"{word_count} words found in the document")
+    print(char_count)
 
 main()
