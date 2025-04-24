@@ -28,3 +28,24 @@ def char_counter(text):
         char_count[c] = 1 + char_count.get(c, 0)
     
     return char_count
+
+def sort_char_dict(char_dict):
+    """
+    Sorts a dictionary of characters and their counts in descending order of counts.
+
+    Args:
+        char_dict (dict): A dictionary where keys are characters (str) and values are their counts (int).
+
+    Returns:
+        list: A list of dictionaries, each containing:
+            - "char" (str): The character.
+            - "num" (int): The count of the character.
+        The list is sorted in descending order based on the "num" value.
+    """
+    sorted_list = []
+
+    for k, v in char_dict.items():
+        sorted_list.append({"char": k, "num": v})
+
+    sorted_list.sort(key=lambda x: x["num"], reverse=True)
+    return sorted_list
